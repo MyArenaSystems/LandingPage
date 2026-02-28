@@ -1,12 +1,12 @@
-﻿/**
+/**
  * My Arena Global Configuration & Asset Loader
  * Centralizes paths for main domain, subdomains, theme assets, and favicons.
  */
 
 const CONFIG = {
     // Automatically detect base URL and image path
-    BASE_URL: window.location.origin + "/landing",
-    IMG_PATH: window.location.origin + "/imgs",
+    BASE_URL: "https://cdn.jsdelivr.net/gh/MyArenaSystems/LandingPage@master/",
+    IMG_PATH: "https://cdn.jsdelivr.net/gh/MyArenaSystems/LandingPage@master/imgs/",
 
     // Theme Colors
     COLORS: {
