@@ -1,4 +1,4 @@
-﻿// Language data
+// Language data
 const languages = [
   { code: "ar", name: "العربية", flag: "ps" },
   { code: "en", name: "English", flag: "us" },
@@ -27,7 +27,7 @@ function renderLanguages() {
     const li = document.createElement("li");
     li.setAttribute("role", "menuitem");
     li.innerHTML = `
-      <a class="dropdown-item d-flex align-items-center" href="${CONFIG.BASE_URL}/${lang.code}/index.html">
+      <a class="dropdown-item d-flex align-items-center" href="${lang.code}/index.html">
         <img src="https://flagcdn.com/20x15/${lang.flag}.png" alt="${lang.name}" class="language-flag" loading="lazy">
       &nbsp;  ${lang.name} &nbsp;
       </a>
