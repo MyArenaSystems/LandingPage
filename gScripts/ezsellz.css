@@ -1,256 +1,4 @@
-﻿
-
-
-@charset "utf-8";
-/* CSS Document */
-
-
-
-        /* =========================================
-           1. ROOT VARIABLES & GLOBAL STYLES
-           ========================================= */
-        :root {
-            /* Premium Brand Colors */
-            --navy-primary: #126460;    /* Deepest Navy */
-            --navy-light: #2a9e97;      /* Lighter Navy for Cards */
-            --navy-accent: #1d807c;     /* Accent Navy */
-            
-            --gold-primary: #e2b869;    /* Metallic Gold */
-            --gold-light: #f2cf82;      /* Pale Gold */
-            --gold-dark: #edc77d;       /* Dark Gold */
-            
-            --text-light: #FFF;      /* Off-white text */
-            --text-muted: #edcf90;      /* Muted text */
-            
-            --white: #ffffff;
-            --glass-bg: rgba(10, 25, 47, 0.85);
-            --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-        }
-
-        body {
-            font-family: 'Tajawal', sans-serif; /* Primary Font */
-            background-color: var(--white);
-            color: var(--navy-primary);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-		
-		
-		
-.language-flag {
-  width: 20px;
-  height: 14px;
-  margin-right: 8px;
-  object-fit: cover;
-}
-
-.dropdown-menu {
-  min-width: 240px;
-  max-height: 300px; /* Scrollable height */
-  overflow-y: auto;
-  padding: 0;
-}
-
-#languageList {
-  margin: 0;
-  padding: 5px 0;
-  list-style: none;
-}
-
-.dropdown-item {
-  padding: 8px 16px;
-  cursor: pointer;
-}
-
-.dropdown-item:hover,
-.dropdown-item:focus {
-  background-color: #f8f9fa;
-  outline: none;
-}
-
-
-
-
-
-/* Gradient Text */
-        .text-gradient {
-            background: linear-gradient(to left, var(--primary-cyan), var(--primary-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* Glassmorphism Classes */
-        .glass-box {
-            background: var(--bg-card);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 40px;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .glass-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.1);
-            border-color: rgba(0, 242, 254, 0.3);
-        }
-
-        /* Hero Section */
-        .hero-section {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            background: radial-gradient(circle at top right, rgba(0, 242, 254, 0.1), transparent 40%),
-                        radial-gradient(circle at bottom left, rgba(79, 172, 254, 0.1), transparent 40%);
-        }
-
-        .hero-img {
-            border-radius: 30px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            border: 1px solid var(--glass-border);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-
-        /* Stats Section */
-        .stat-number {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 10px;
-            font-family: monospace;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-        }
-
-        .service-icon-wrap {
-            width: 70px;
-            height: 70px;
-            border-radius: 20px;
-            background: linear-gradient(135deg, rgba(0, 242, 254, 0.1), rgba(79, 172, 254, 0.1));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: var(--primary-cyan);
-            margin-bottom: 20px;
-            border: 1px solid rgba(0, 242, 254, 0.2);
-        }
-
-        p {
-            color: var(--text-gray);
-            line-height: 1.9;
-            font-size: 1.05rem;
-        }
-
-        /* Timeline / Workflow */
-        .workflow-step {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .workflow-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: var(--bg-dark);
-            border: 2px dashed var(--primary-blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-            margin: 0 auto 20px;
-            transition: all 0.3s;
-        }
-
-        .workflow-step:hover .workflow-icon {
-            background: var(--primary-blue);
-            border-style: solid;
-            box-shadow: 0 0 20px rgba(79, 172, 254, 0.4);
-        }
-
-
-
-
-		/* Updated Global Styles to fix Mobile Scroll */
-        html, body {
-            width: 100%;
-            overflow-x: hidden !important; /* Forces hiding of horizontal overflow */
-            position: relative;
-        }
-
-      
-
-        /* CRITICAL FIX: This ensures AOS animations don't expand the page width */
-        section, header, footer {
-            overflow-x: hidden; 
-            width: 100%;
-        }
-
-        /* Fix for Bootstrap rows causing overflow on small screens */
-        .row {
-            margin-right: 0 !important;
-            margin-left: 0 !important;
-        }
-        
-        /* Ensure containers have padding to compensate for row margin removal */
-        .container, .container-fluid {
-            padding-right: 15px;
-            padding-left: 15px;
-        }
-		
-		
-		
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Cairo', sans-serif; /* Headings Font */
-            font-weight: 700;
-        }
-
-        /* Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--navy-primary);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--gold-primary);
-            border-radius: 5px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--gold-light);
-        }
-
-        /* Selection */
-        ::selection {
-            background-color: var(--gold-primary);
-            color: var(--navy-primary);
-        }
-
-        /* Helper Classes */
-        .text-gold { color: var(--gold-primary) !important; }
-        .text-navy { color: var(--navy-primary) !important; }
-        .bg-navy { background-color: var(--navy-primary) !important; }
-        .bg-gold { background-color: var(--gold-primary) !important; }
-
-        /* =========================================
-           2. NAVBAR STYLES
-           ========================================= */
-        .navbar {
+﻿  .navbar {
             background-color: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             padding: 15px 0;
@@ -354,55 +102,27 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* =========================================
-   UPDATED HeroSide SLIDER STYLES
+   UPDATED HERO SLIDER STYLES
    ========================================= */
-.HeroSide-slider-container {
+.hero-slider-container {
     position: relative;
     height: 40vh;
-    min-height: 300px;
+    min-height: 40px;
+	margin-top:70px;
     overflow: hidden;
 }
 
 .carousel-item {
-    height: 40vh;
-    min-height: 300px;
+    height: 100vh;
+    min-height: 40px;
     background-size: cover;
     background-position: center;
     position: relative;
 }
 
 /* Ensure the overlay covers every slide individually */
-.HeroSide-slide-overlay {
+.hero-slide-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background: linear-gradient(135deg, rgba(10, 25, 47, 0.95) 0%, rgba(10, 25, 47, 0.6) 100%);
@@ -410,7 +130,7 @@
 }
 
 /* Content positioning within the slider */
-.HeroSide-content-wrapper {
+.hero-content-wrapper {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     display: flex;
@@ -440,45 +160,45 @@
 
 
         /* =========================================
-           3. HeroSide SECTION
+           3. HERO SECTION
            ========================================= */
-        .HeroSide-section {
+        .hero-section {
             position: relative;
             height: 40vh;
-            min-height: 300px;
+            min-height: 40px;
             background: url('https://mediusware.com/_next/image?url=https%3A%2F%2Fmw-hr.sgp1.digitaloceanspaces.com%2Fmedia%2Fblog_images%2FHealthcare_Feature_image_2.png&w=2048&q=75') no-repeat center center/cover;
             display: flex;
             align-items: center;
             overflow: hidden;
         }
 
-        .HeroSide-overlay {
+        .hero-overlay {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background: linear-gradient(135deg, rgba(10, 25, 47, 0.95) 0%, rgba(10, 25, 47, 0.7) 100%);
         }
 
-        .HeroSide-content {
+        .hero-content {
             position: relative;
             z-index: 2;
             color: var(--white);
         }
 
-        .HeroSide-title {
-            font-size: 2.5rem;
-            line-height: 1.4;
+        .hero-title {
+            font-size: 3rem;
+            line-height: 1.2;
             margin-bottom: 20px;
-			margin-top:80px;
+			
         }
 
-        .HeroSide-title span {
+        .hero-title span {
             color: var(--gold-primary);
             position: relative;
             display: inline-block;
         }
         
-        .HeroSide-subtitle {
-            font-size: 1.2 rem;
+        .hero-subtitle {
+            font-size: 1.2rem;
             color: var(--text-muted);
             margin-bottom: 40px;
             max-width: 700px;
@@ -500,20 +220,31 @@
 
 
 
- 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 /* =========================================
-   ADVANCED HeroSide ANIMATIONS
+   ADVANCED HERO ANIMATIONS
    ========================================= */
 
 /* 1. The Container */
-.HeroSide-slider-container {
+.hero-slider-container {
     position: relative;
     height: 40vh;
-    min-height: 300px;
+    min-height: 40px;
     overflow: hidden;
     background: #000; /* Fallback */
 }
@@ -521,7 +252,7 @@
 /* 2. Background Image Setup for Ken Burns Effect */
 .carousel-item {
     height: 40vh;
-    min-height: 300px;
+    min-height: 40px;
     overflow: hidden; /* Important for zoom */
 }
 
@@ -543,7 +274,7 @@
 }
 
 /* 3. The Particle Canvas (The Network Effect) */
-#HeroSideCanvas {
+#heroCanvas {
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
@@ -553,7 +284,7 @@
 }
 
 /* 4. Premium Text Reveal (Masked Slide Up) */
-.HeroSide-content-wrapper {
+.hero-content-wrapper {
     z-index: 3; /* Top layer */
 }
 
@@ -904,7 +635,7 @@
         }
 
         footer {
-            background-color: var(--navy-primary);
+            background-color: #050d1a;
             color: #8892b0;
             padding: 70px 0 20px;
             font-size: 0.95rem;
@@ -988,7 +719,7 @@
         .chat-box {
             position: absolute;
             bottom: 80px; left: 0;
-            width: 300px;
+            width: 350px;
             background: white;
             border-radius: 15px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.2);
@@ -1047,3 +778,348 @@
             from { opacity: 0; transform: translateY(20px) scale(0.9); }
             to { opacity: 1; transform: translateY(0) scale(1); }
         }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+/* ===== SMART28 APP 
+***********************************************************************************************
+***********************************************************************************************   ===== */
+ 
+ 
+ 
+
+
+/* =========================================
+   EZSELLZ - E-COMMERCE & MARKETPLACE
+   ========================================= */
+.ezsellz-section {
+    background-color: #ffffff;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* نمط خلفية خفيف يوحي بالشبكة التجارية */
+.marketplace-dot-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(#d4af37 0.5px, transparent 0.5px);
+    background-size: 40px 40px;
+    opacity: 0.05;
+    z-index: 0;
+}
+
+.vendor-dashboard-card {
+    background: #ffffff;
+    border-radius: 30px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 40px 80px rgba(16, 40, 75, 0.08);
+    padding: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.feature-tag-gold {
+    background: rgba(211, 84, 0, 0.1);
+    color: var(--gold-primary);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.market-item-preview {
+    background: #f8f9fa;
+    border-radius: 20px;
+    padding: 15px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.market-item-preview:hover {
+    border-color: var(--gold-primary);
+    transform: translateY(-5px);
+    background: #fff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.status-badge-live {
+    width: 10px; height: 10px;
+    background: #2ecc71;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 5px;
+    box-shadow: 0 0 10px #2ecc71;
+}
+
+
+
+
+/* =========================================
+   EZSELLZ - UX & CLASSIFIED ADS SECTION
+   ========================================= */
+.ux-ads-section {
+    background: var(--navy-primary);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* دوائر ضوئية خلفية خافتة */
+.ux-ads-section::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(211, 84, 0, 0.1) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+}
+
+.mobile-preview-frame {
+    background: #0d1b2a;
+    border: 8px solid #1b263b;
+    border-radius: 40px;
+    padding: 15px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+    position: relative;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.classified-ad-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 25px;
+    border-right: 4px solid var(--gold-primary);
+    transition: 0.4s;
+}
+
+.classified-ad-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-10px);
+}
+
+.promotion-badge {
+    background: linear-gradient(90deg, var(--gold-primary), var(--gold-dark));
+    color: var(--navy-primary);
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    display: inline-block;
+
+}
+
+
+/* =========================================
+   EZSELLZ - FINTECH & ADMIN CONTROL
+   ========================================= */
+.ez-admin-section {
+    background-color: #ffffff;
+    padding: 100px 0;
+    position: relative;
+}
+
+/* بطاقة الدفع الآمن */
+.secure-pay-card {
+    background: var(--navy-primary);
+    border-radius: 25px;
+    padding: 40px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(16, 40, 75, 0.2);
+}
+
+.secure-pay-card::after {
+    content: '\f240'; /* FontAwesome Battery/Card icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    font-size: 10rem;
+    color: rgba(255, 255, 255, 0.03);
+}
+
+.analytics-mini-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 20px;
+    border-top: 4px solid var(--gold-primary);
+    transition: 0.3s;
+}
+
+.analytics-mini-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.admin-lock-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--gold-primary);
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.stat-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--gold-primary);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+
+
+/* =========================================
+   EZSELLZ - OMNICHANNEL & CLOUD SECURITY
+   ========================================= */
+.ez-cloud-section {
+    background: radial-gradient(circle at top right, var(--navy-light) 0%, var(--navy-primary) 100%);
+    padding: 100px 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* تأثير الخطوط المتصلة (الشبكة السحابية) */
+.cloud-grid-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/connect.png');
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.sync-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 25px;
+    padding: 35px;
+    backdrop-filter: blur(10px);
+    height: 100%;
+    position: relative;
+    transition: 0.4s;
+}
+
+.sync-box:hover {
+    border-color: var(--gold-primary);
+    transform: translateY(-10px);
+}
+
+.marketing-pill {
+    background: var(--gold-primary);
+    color: var(--navy-primary);
+    padding: 5px 15px;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.cloud-shield-icon {
+    font-size: 4rem;
+    color: var(--gold-primary);
+    filter: drop-shadow(0 0 15px rgba(211, 84, 0, 0.4));
+    margin-bottom: 20px;
+}
+
+.promo-tag-float {
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: #e74c3c;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+
+
+/* =========================================
+   EZSELLZ - FINAL VISION & GROWTH
+   ========================================= */
+.ez-vision-section {
+    background-color: #ffffff;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* خلفية هندسية توحي بالصعود */
+.growth-lines-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(212, 175, 55, 0.02) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(212, 175, 55, 0.02) 25%, transparent 25%);
+    background-size: 60px 60px;
+    z-index: 0;
+}
+
+.vision-card {
+    background: #ffffff;
+    border-radius: 40px;
+    padding: 60px;
+    box-shadow: 0 40px 100px rgba(16, 40, 75, 0.06);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.rocket-icon-box {
+    width: 100px;
+    height: 100px;
+    background: var(--navy-primary);
+    color: var(--gold-primary);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin: -110px auto 40px;
+    box-shadow: 0 20px 40px rgba(16, 40, 75, 0.2);
+    transform: rotate(-15deg);
+}
+
+.scalability-tag {
+    background: var(--gold-primary);
+    color: var(--navy-primary);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+
+
+

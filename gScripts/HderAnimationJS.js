@@ -1,4 +1,4 @@
-// Language data
+﻿// Language data
 const languages = [
   { code: "ar", name: "العربية", flag: "ps" },
   { code: "en", name: "English", flag: "us" },
