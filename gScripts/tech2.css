@@ -41,7 +41,7 @@
     .mission__vision__section {
         /* FIXED: Split background properties for stability between sections */
         background-image: linear-gradient(rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 0.99)), 
-                          url('https://cdn.jsdelivr.net/gh/MyArenaSystems/LandingPage@main/imgs/coding_bgs.jpg');
+                          url('https://cdn.jsdelivr.net/gh/MyArenaSystems/LandingPage@main/imgs/coding_bg.jpg');
         background-position: center;
         background-size: cover;
         background-attachment: fixed;
