@@ -185,7 +185,7 @@
             transition: all 0.3s ease;
         }
         .about-card:hover .icon-wrapper {
-            background: #0d6efd;
+            background: var(--navy-primary);
             color: #ffffff;
             transform: rotateY(180deg);
         }
